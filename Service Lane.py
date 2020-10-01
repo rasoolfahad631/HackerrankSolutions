@@ -1,8 +1,7 @@
-def serviceLane(n, cases,width):
-    m = []
-    for i in range(cases[0],cases[1]+1):
-        m.append(width[i])
-    print(min(m))
+def serviceLane(n, cases):
+    # Returning a array with minimum width for each test case
+    # slice[start:stop] will omit stop'th index hence add 1 to stop
+    return [min(width[i[0] : i[1] + 1]) for i in cases]
         
 
 if __name__ == '__main__':
@@ -20,5 +19,5 @@ if __name__ == '__main__':
         # cases.append(list(map(int, input().rstrip().split())))
         cases=(list(map(int, input().rstrip().split())))
 
-        serviceLane(n, cases,width)
+        serviceLane(cases, width)
 
